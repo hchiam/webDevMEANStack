@@ -1,9 +1,10 @@
-<html ng-app="app">
+<html data-ng-app="app">
     <head>
         <title>Hello Controllers in AngularJS</title>
     </head>
     <body>
-        <ng-view></ng-view>
+        <!--directive "element" that gets an html template "injected" into the ngView-->
+        <data-ng-view></data-ng-view>
         <!--get the main angular functionality-->
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
         <!--get angular routes functionality-->
@@ -11,8 +12,8 @@
         <!--template--> 
         <script type="text/ng-template" id="/todos.html">
             <ul>
-                <li ng-repeat="todo in todos">
-                    <input type="checkbox" ng-model="todo.completed">
+                <li data-ng-repeat="todo in todos">
+                    <input type="checkbox" data-ng-model="todo.completed">
                     {{ todo.name }}
                 </li>
             </ul>
@@ -33,10 +34,10 @@
                         { name: 'Be awesome!', completed: false },
                     ];
                 }])
-                .config(['$routeProvider', function ($routeProvider) {
+                .config(['$routeProvider', function ($routeProvider) { // renders html to the ng-view directive "element"
                     $routeProvider
                         .when('/', {
-                            templateUrl: '/todos.html',
+                            templateUrl: '/todos.html', // gets the todos (could be as separate .html file) and put into ng-view
                             controller: 'TodoController'
                     });
                 }]);
