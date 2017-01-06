@@ -1,0 +1,35 @@
+<html data-ng-app="app"> <!--added here: module's name: "app"-->
+    <body data-ng-controller="TodoController">
+        <p>Todo List:</p>
+        <ul>
+            <li data-ng-repeat="todo in todos">
+                <input type="checkbox" data-ng-model="todo.completed">
+                {{ todo.name }}
+            </li>
+        </ul>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+        <script>
+            //function TodoController($scope) {
+            //    $scope.todos = [
+            //        { name: 'Master HTML/CSS/Javascript', completed: true },
+            //        { name: 'Learn AngularJS', completed: false },
+            //        { name: 'Build NodeJS backend', completed: false },
+            //        { name: 'Get started with ExpressJS', completed: false },
+            //        { name: 'Setup MongoDB database', completed: false },
+            //        { name: 'Be awesome!', completed: false },
+            //    ]
+            //}
+            angular.module('app', []) // this module encapsulates the controller within it
+                .controller('TodoController', ['$scope', function ($scope) { // here's the same controller as above
+                    $scope.todos = [
+                        { name: 'Master HTML/CSS/Javascript', completed: true },
+                        { name: 'Learn AngularJS', completed: false },
+                        { name: 'Build NodeJS backend', completed: false },
+                        { name: 'Get started with ExpressJS', completed: false },
+                        { name: 'Setup MongoDB database', completed: false },
+                        { name: 'Be awesome!', completed: false },
+                    ];
+                }]);
+        </script>
+    </body>
+</html>
