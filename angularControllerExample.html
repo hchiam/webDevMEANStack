@@ -1,9 +1,9 @@
-<html ng-app>
-    <body ng-controller="TodoController">
+<html data-ng-app>
+    <body data-ng-controller="TodoController">
         <p>Todo List:</p>
         <ul>
-            <li ng-repeat="todo in todos">
-                <input type="checkbox" ng-model="todo.completed">
+            <li data-ng-repeat="todo in todos">
+                <input type="checkbox" data-ng-model="todo.completed">
                 {{ todo.name }}
             </li>
         </ul>
