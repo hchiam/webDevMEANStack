@@ -2,6 +2,8 @@
 
 Practice with MEAN Stack web dev tutorials.
 
+See the other things I'm learning: https://github.com/hchiam/learning
+
 # My Related Previous Repos:
 
 https://github.com/hchiam/angularjsSandbox
